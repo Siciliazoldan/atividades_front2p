@@ -1,0 +1,128 @@
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #5f1d1d;
+  color: #0f0f0f;
+  position: relative;
+}
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+.logo img{
+  width: 15%;
+}
+.menu {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  flex-shrink: 0; /*Impede o menu de encolher e esmagar o texto*/
+  font-size: 20px;
+}
+.menu a {
+  white-space: nowrap;
+  color: #ececec;
+  text-decoration: none;
+}
+.menu a:hover {
+  color: #8a070789;
+}
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .cabecalho {
+    padding: 15px 20px;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fffefe;
+    padding: 20px;
+    gap: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+  .menu.ativo {
+    display: flex;
+  }
+}
+
+/*Inicio Index*/
+.container{
+  display: flex;
+  flex-direction: row;
+
+}
+.side{
+  flex: 25%;
+  background-color: #f8f7f7;
+  padding: 20px;
+
+}
+.main{
+  flex: 75%;
+  background-color: #f8f7f7;
+  padding: 20px;
+}
+
+/*Buscar*/
+.busca input[type="search"]{
+  width: 230px;
+  padding: 8px;
+  border-radius:  10px;
+}
+.busca h2,
+.busca form{
+  margin: 10px;
+}
+.busca button{
+  background-color: rgb(241, 153, 53);
+  border: none;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px black;
+  padding: 10px 15px;
+}
+
+/*menu-departamentos*/
+.menu-departamentos {
+  clear: left;
+  margin: 10px;
+  margin-bottom: 10px;
+}
+
+.menu-departamentos h2 {
+  background-color: #bbb;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0.4px 6px rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
+}
+
+.menu-departamentos h3 {
+  background-color: #ebae64;
+  padding: 20px;
+  border-radius: 5px;
+   box-shadow: 0.4px 6px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+
+/*Fim Index*/
