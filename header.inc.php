@@ -25,7 +25,7 @@
         </nav>
         <div class="carrinho">
             <div class="ajuste_icone_carrinho">
-                <a href="#"><img src="img/carrinho.2.png" width="20%" heigth="5%" alt="carrinho de compras">
+                <a href="carrinho.php"><img src="img/carrinho.2.png" width="20%" heigth="5%" alt="carrinho de compras">
                 <span class="valor_carrinho">730</span>
             </div>
 
