@@ -9,103 +9,79 @@
             </form>
         </section>
 <section class="menu-departamentos">
-    <h2>Departamentos</h2>
+    <h2>Menu</h2>
     <nav>
-        <h3>Setor de Alimentos e verduras</h3>
+        <h3>Doces</h3>
         <ul>
-            <li><a href="#">Hortifrúti</a>
+            <li><a href="#">Doces básicos</a>
             <ul>
-                 <li><a href="#">Frutas</a></li>
-                 <li><a href="#">Legumes</a></li>
-                 <li><a href="#">Verduras</a></li>
-                 <li><a href="#">Temperos Frescos</a></li>
+                 <li><a href="#">Brigadeiro</a></li>
+                 <li><a href="#">Beijinho</a></li>
+                 <li><a href="#">Doce de uva</a></li>
+                 <li><a href="#">Dois amores</a></li>
             </ul>
         </li>
-        <li><a href="#">Padaria</a>
+        <li><a href="#">Doces Trufados</a>
            <ul>
-                 <li><a href="#">Pães</a></li>
-                 <li><a href="#">Bolos</a></li>
-                 <li><a href="#">Salgados</a></li>
-                 <li><a href="#">Doces</a></li>
+                 <li><a href="#">Brigadeiro Trufado</a></li>
+                 <li><a href="#">Beijinho Trufado</a></li>
+                 <li><a href="#">Brigadeiro Ninho com Nutella</a></li>
+                 <li><a href="#">Brigadeiro de Morango Trufado</a></li>
             </ul>
        </li> 
-       <li><a href="#">Açougue e Peixaria</a>
+       <li><a href="#">Doces Fits</a>
             <ul>
-                 <li><a href="#">Carnes vermelhas</a></li>
-                 <li><a href="#">Aves</a></li>
-                 <li><a href="#">Peixes</a></li>
-                 <li><a href="#">Frutos do mar</a></li>
-            </ul>
-        <li><a href="#">Frios e Laticínios</a>
-            <ul>
-                <li><a href="#">Queijo</a></li>
-                 <li><a href="#">Presunto</a></li>
-                 <li><a href="#">Iogurte</a></li>
-                 <li><a href="#">Manteiga</a></li>
+                 <li><a href="#">Brigadeiro com whey de chocolate</a></li>
+                 <li><a href="#">Brigadeiro com whey de morango</a></li>
+                 <li><a href="#">Brigadeiro com whey de baunilha</a></li>
+                 <li><a href="#">Tortinha fit de limão</a></li>
             </ul>
         </ul>
-        <h3>Setor de Despezas e Bebidas</h3>
+        <h3>Salgados</h3>
         <ul>
-            <li><a href="#">Mercearia</a>
+            <li><a href="#">Salgados tradicionais</a>
                 <ul>
-                    <li><a href="#">Arroz</a></li>
-                    <li><a href="#">Feijão</a></li>
-                    <li><a href="#">Massas</a></li>
-                    <li><a href="#">Óleos</a></li>
-                    <li><a href="#">Açucar</a></li>
-                    <li><a href="#">Café</a></li>
-                    <li><a href="#">Enlatados</a></li>
-                </ul>
-         <li><a href="#">Bebidas</a>
-                <ul>
-                    <li><a href="#">Águas</a></li>
-                    <li><a href="#">Sucos</a></li>
-                    <li><a href="#">Refrigerantes</a></li>
-                    <li><a href="#">Cervejas</a></li>
-                    <li><a href="#">Vinhos</a></li>
-                    <li><a href="#">Destilados</a></li>
-                </ul>    
-        <li><a href="#">Congelados</a>
-                <ul>
-                    <li><a href="#">Pratos Prontos</a></li>
-                    <li><a href="#">Pizzas</a></li>
-                    <li><a href="#">Pão de Queijo</a></li>
-                    <li><a href="#">Vegetais congelados</a></li>
-                </ul> 
+                    <li><a href="#">Empada</a></li>
+                    <li><a href="#">Coxinha de frango</a></li>
+                    <li><a href="#">Pão de batata</a></li>
+                    <li><a href="#">Esfiha</a></li>
+                    <li><a href="#">Quibe</a></li>
+                    <li><a href="#">Bolinho de carne</a></li>
+                    <li><a href="#">Misto quente</a></li>
         </li>
     </ul>
-        <h3>Setor de uso pessoal e da casa</h3>
-        <ul>
-            <li><a href="#">Higiene e Perfumaria</a>
-                <ul>
-                    <li><a href="#">Sabonetes</a></li>
-                    <li><a href="#">Shampoo</a></li>
-                    <li><a href="#">Cremes</a></li>
-                    <li><a href="#">Desodorantes</a></li>
-                    <li><a href="#">Papel higiênico</a></li>
-                </ul>
-            <li><a href="#">Limpeza</a>
-                <ul>
-                    <li><a href="#">Sabão em pó</a></li>
-                    <li><a href="#">Desinfetante</a></li>
-                    <li><a href="#">Amaciantes</a></li>
-                    <li><a href="#">Esponjas</a></li>
-                </ul>
-            <li><a href="#">Utilidades e Pet Shop</a>
-                <ul>
-                    <li><a href="#">Ração</a></li>
-                    <li><a href="#">Saches</a></li>
-                    <li><a href="#">Brinquedos</a></li>
-                    <li><a href="#">Petiscos</a></li>
-                    <li><a href="#">Sacos de lixo</a></li>
-                    <li><a href="#">Roupa de pet</a></li>
-                </ul>
-
-    </nav>
+       </nav>
 </section>
     </div>
 <div class ="main">
-    <h1>Foto</h1>
+    <img src="img/banner1.png" alt="Banner de promoções">
+    <div class="promocoes">
+        <div>
+        Promoção do dia
+        </div>
+        <div>
+        Promoção do dia
+        </div>
+        <div>
+        Compre 1 leve 2
+        </div>
+        <div>
+        Combo casal
+        </div>
+        <div>
+        Combo família
+        </div>
+        <div>
+        Mais pedido da semana
+        </div>
+        <div>
+        Mais doce
+        </div>
+        <div>
+        Menos calórico
+        </div>
+    </div>
+    
     </div>
 </div>
 <?php include 'inc/footer.inc.php'; ?>
