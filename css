@@ -1,24 +1,27 @@
 .cabecalho {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  /*justify-content: space-between;*/
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding: 20px 40px;
-  background-color: #5f1d1d;
+  background-color: #59082E;
   color: #0f0f0f;
   position: relative;
 }
 .logo {
   font-size: 24px;
   font-weight: bold;
+  justify-self: start; /*garante que a logo enconste a direita*/
 }
 .logo img{
-  width: 15%;
+  width: 25%;
 }
 .menu {
   display: flex;
   gap: 20px;
-  width: max-content;
-  flex-shrink: 0; /*Impede o menu de encolher e esmagar o texto*/
+  /*width: max-content;*/
+  /*flex-shrink: 0; /*Impede o menu de encolher e esmagar o texto*/
+  justify-self: center; /*trava exatamente no centro da tela*/
   font-size: 20px;
 }
 .menu a {
@@ -27,7 +30,7 @@
   text-decoration: none;
 }
 .menu a:hover {
-  color: #8a070789;
+  color: 2c0707;
 }
 .menu-toggle {
   display: none;
@@ -35,6 +38,42 @@
   background: none;
   border: none;
   cursor: pointer;
+}
+
+.carrinho {
+  display: flex;
+  align-items: center ;
+  justify-self: end; /*Força o carrinho a ir para o extremo direito*/
+  gap: 20px;
+}
+
+.ajuste_icone_carrinho img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.ajuste_icone_carrinho {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 90px;
+}
+
+.valor_carrinho {
+  position: absolute;
+  top: -5px;
+  right: 25px;
+  background-color: rgb(219, 180, 101);
+  color: #ececec;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 50%; 
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media (max-width: 768px) {
   .cabecalho {
@@ -69,7 +108,7 @@
 }
 .side{
   flex: 25%;
-  background-color: #f8f7f7;
+  background-color: #8C2957;
   padding: 20px;
 
 }
@@ -77,6 +116,10 @@
   flex: 75%;
   background-color: #f8f7f7;
   padding: 20px;
+}
+
+.main img{
+  width: 101%;
 }
 
 /*Buscar*/
@@ -87,12 +130,12 @@
 }
 .busca h2,
 .busca form{
-  margin: 10px;
+  margin: 100px;
 }
 .busca button{
-  background-color: rgb(241, 153, 53);
+  background-color: #2c0707(241, 153, 53);
   border: none;
-  color: white;
+  color: #2c0707;
   border-radius: 10px;
   box-shadow: 2px 2px 2px black;
   padding: 10px 15px;
@@ -106,7 +149,7 @@
 }
 
 .menu-departamentos h2 {
-  background-color: #bbb;
+  background-color: #e9dfdf;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0.4px 6px rgba(0, 0, 0, 0.5);
@@ -114,15 +157,33 @@
 }
 
 .menu-departamentos h3 {
-  background-color: #ebae64;
+  background-color: #2c0707;
+  color: #fffefe;
   padding: 20px;
   border-radius: 5px;
    box-shadow: 0.4px 6px rgba(0, 0, 0, 0.5);
 }
 
+.promocoes {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fffefe(129, 129, 129);
+}
 
+.promocoes div{
+  background-color: #59082E;
+  width: 220px;
+  height: 270px;
+  padding: 17px;
+  margin-left: 7.5px;
+  margin: 7.5px;
+  color: white;
+  border-radius: 10px;
+}
 
-
-
+.promocoes div img{
+  width: 100%;
+  height: 270px;
+}
 
 /*Fim Index*/
