@@ -1,41 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZOLDOCE</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <title>The Copão Na Mão</title>
+    <!-- Google Fonts: Sora -->
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <header class="cabecalho">
-        <div class="logo">
-            <img src ="img/logo.png" alt="Meu Restaurante">
-        </div>
-        <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
-        <nav class="menu">
-            <a href="#">Início</a>
-            <a href="#">Cadastrar</a>
-            <a href="#">Produtos</a>
-            <a href="#">Sobre</a>
-            <a href="#">Contato</a>
-            <a href="#">Ajuda</a>
-        </nav>
-        <div class="carrinho">
-            <div class="ajuste_icone_carrinho">
-                <a href="carrinho.php"><img src="img/carrinho.2.png" width="20%" heigth="5%" alt="carrinho de compras">
-                <span class="valor_carrinho">730</span>
-            </div>
 
+    <!-- CABEÇALHO PRINCIPAL -->
+    <header class="cabecalho-principal">
+        <div class="logo-container">
+            <a href="index.php">
+                <img src="img/logo.png" alt="The Copão Na Mão" class="logo-img">
+            </a>
+        </div>
+
+        <div class="busca-container">
+            <form action="busca.php" method="GET">
+                <input type="text" name="q" placeholder="Qual a boa de hoje? Ex: Copão de Gin">
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+
+        <div class="acoes-topo">
+            <a href="carrinho.php" class="btn-carrinho-topo">🛒 Carrinho (2)</a>
         </div>
     </header>
-    <script>
-        const toggleBtn = document.querySelector('.menu-toggle');
-        const menu = document.querySelector('.menu');
-
-        toggleBtn.addEventListener('click', () => {
-            menu.classList.toggle('ativo');
-        });
-    </script>
