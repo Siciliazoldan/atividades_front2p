@@ -1,52 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Copão - Distribuidora de Bebidas</title>
-
-    <!-- Bootstrap CSS (Padrão W3Schools / Aulas) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Nosso estilo personalizado -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    
-    <!-- Ícone da aba do navegador -->
-    <link rel="icon" type="image/x-icon" href="img/logo.png">
+    <title>The Copão Na Mão</title>
+    <!-- Google Fonts: Sora -->
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
+<body>
 
-<body class="bg-light">
-
-<header class="bg-dark text-white shadow-sm sticky-top">
-    <div class="container d-flex justify-content-between align-items-center py-3">
-        
-        <!-- Logo do E-commerce -->
-        <div class="logo">
+    <!-- CABEÇALHO PRINCIPAL -->
+    <header class="cabecalho-principal">
+        <div class="logo-container">
             <a href="index.php">
-                <img src="img/logo.png" alt="The Copão" style="height: 50px;" class="img-fluid">
+                <img src="img/logo.png" alt="The Copão Na Mão" class="logo-img">
             </a>
         </div>
 
-        <!-- Menu de Navegação -->
-        <nav class="nav d-none d-md-flex gap-3 align-items-center">
-            <a href="index.php" class="text-white text-decoration-none fw-semibold">Início</a>
-            <a href="#produtos" class="text-white text-decoration-none fw-semibold">Cardápio & Copões</a>
-            <a href="#destaques" class="text-white text-decoration-none fw-semibold">Bebidas</a>
-            <a href="#contato" class="text-white text-decoration-none fw-semibold">Contato</a>
-        </nav>
-
-        <!-- Ações do Header (Carrinho) -->
-        <div class="acoes-header d-flex align-items-center">
-            <div class="carrinho position-relative">
-                <a href="carrinho.php" class="btn btn-outline-warning position-relative d-flex align-items-center gap-2">
-                    🛒 Carrinho
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        0
-                    </span>
-                </a>
-            </div>
+        <div class="busca-container">
+            <form action="busca.php" method="GET">
+                <input type="text" name="q" placeholder="Qual a boa de hoje? Ex: Copão de Gin">
+                <button type="submit">Buscar</button>
+            </form>
         </div>
 
-    </div>
-</header>
+        <div class="acoes-topo">
+            <a href="carrinho.php" class="btn-carrinho-topo">🛒 Carrinho (2)</a>
+        </div>
+    </header>

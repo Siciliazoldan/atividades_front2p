@@ -1,138 +1,138 @@
-<?php
-include 'inc/header.inc.php';
-?>
+<?php include 'inc/header.inc.php'; ?>
 
-<div class="container-fluid py-5" style="background-color: #121212; color: #ffffff; min-height: 80vh;">
-    <div class="container py-3">
-        <h2 class="mb-4 fw-bold text-warning">
-            🛒 Meu Carrinho - The Copão
-        </h2>
+<main class="container-carrinho" style="width: 90%; max-width: 900px; margin: 30px auto 60px auto;">
+    <h2 style="color: #fff; margin-bottom: 25px; border-left: 4px solid var(--roxo-neon); padding-left: 12px; font-size: 22px;">
+        Meu Carrinho – The Copão
+    </h2>
 
-        <div class="row g-4">
-            <!-- Lista de Produtos (Coluna Esquerda) -->
-            <div class="col-lg-8">
-                <div class="card shadow-sm border-0 rounded-3 p-3" style="background-color: #1a1a1a; color: #ffffff; border: 1px solid #ffcc00 !important;">
-                    <div class="table-responsive">
-                        <table class="table align-middle table-dark table-borderless mb-0">
-                            <thead>
-                                <tr class="text-warning border-bottom fs-7 text-uppercase">
-                                    <th scope="col" style="min-width: 250px;">Produto</th>
-                                    <th scope="col" class="text-center" style="width: 120px;">Qtd</th>
-                                    <th scope="col" class="text-end" style="width: 120px;">Preço</th>
-                                    <th scope="col" class="text-end" style="width: 50px;"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Item 1 -->
-                                <tr class="border-bottom border-secondary">
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <img src="img/copao-whisky.png" class="img-fluid rounded me-3" alt="Copão de Whisky 700ml" style="width: 60px; height: 60px; object-fit: cover; background: #000;">
-                                            <div>
-                                                <h6 class="mb-0 fw-bold text-white">Copão Whisky + Energético</h6>
-                                                <small class="text-muted">700ml // Gelo de Sabor</small>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="input-group input-group-sm border border-secondary rounded">
-                                            <button class="btn btn-link text-warning text-decoration-none px-2" type="button">-</button>
-                                            <input type="text" class="form-control text-center border-0 bg-transparent text-white px-0" value="2" readonly>
-                                            <button class="btn btn-link text-warning text-decoration-none px-2" type="button">+</button>
-                                        </div>
-                                    </td>
-                                    <td class="text-end fw-bold text-warning">R$ 20,00</td>
-                                    <td class="text-end">
-                                        <button class="btn btn-sm btn-outline-danger border-0">❌</button>
-                                    </td>
-                                </tr>
+    <!-- Topo do Carrinho -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <a href="index.php" style="color: var(--texto-secundario); text-decoration: none; font-size: 14px;">← Continuar Comprando</a>
+        <button type="button" onclick="limparCarrinho()" style="background: transparent; color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.4); padding: 5px 12px; border-radius: 6px; cursor: pointer; font-size: 12px;">Limpar Carrinho</button>
+    </div>
 
-                                <!-- Item 2 -->
-                                <tr class="border-bottom border-secondary">
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <img src="img/copao-gin.png" class="img-fluid rounded me-3" alt="Copão Gin Tropical 700ml" style="width: 60px; height: 60px; object-fit: cover; background: #000;">
-                                            <div>
-                                                <h6 class="mb-0 fw-bold text-white">Copão Gin Tropical</h6>
-                                                <small class="text-muted">700ml // Frutas Secas</small>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="input-group input-group-sm border border-secondary rounded">
-                                            <button class="btn btn-link text-warning text-decoration-none px-2" type="button">-</button>
-                                            <input type="text" class="form-control text-center border-0 bg-transparent text-white px-0" value="1" readonly>
-                                            <button class="btn btn-link text-warning text-decoration-none px-2" type="button">+</button>
-                                        </div>
-                                    </td>
-                                    <td class="text-end fw-bold text-warning">R$ 18,00</td>
-                                    <td class="text-end">
-                                        <button class="btn btn-sm btn-outline-danger border-0">❌</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!-- Ações do fundo da tabela -->
-                    <div class="d-flex justify-content-between align-items-center mt-3 pt-2">
-                        <a href="index.php" class="btn btn-link text-warning text-decoration-none p-0 fw-bold">
-                            ← Continuar Comprando
-                        </a>
-                        <button class="btn btn-outline-secondary btn-sm rounded-pill text-white">Limpar Carrinho</button>
-                    </div>
+    <!-- Lista de Itens -->
+    <div id="listaCarrinho" style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px;">
+        
+        <!-- Item 1 -->
+        <div class="item-carrinho" data-preco="20.00" style="background: var(--fundo-card, #18181b); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 12px; padding: 15px; display: flex; align-items: center; justify-content: space-between; gap: 15px;">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <img src="img/jack.png" alt="Copão Whisky" style="width: 65px; height: 65px; object-fit: cover; border-radius: 8px;">
+                <div>
+                    <h4 style="color: #fff; font-size: 15px; margin-bottom: 4px;">Copão Whisky + Energético</h4>
+                    <p style="color: var(--texto-secundario); font-size: 12px;">700ml // Gelo de Sabor</p>
                 </div>
             </div>
 
-            <!-- Resumo do Pedido (Coluna Direita) -->
-            <div class="col-lg-4">
-                <div class="card shadow-sm border-0 rounded-3 p-4 mb-3" style="background-color: #1a1a1a; color: #ffffff; border: 1px solid #ffcc00 !important;">
-                    <h5 class="mb-4 fw-bold text-warning">Resumo da Compra</h5>
-
-                    <div class="d-flex justify-content-between mb-2">
-                        <span class="text-muted">Subtotal (3 itens)</span>
-                        <span class="fw-semibold">R$ 58,00</span>
-                    </div>
-                    <div class="d-flex justify-content-between mb-2">
-                        <span class="text-muted">Taxa de Entrega</span>
-                        <span class="text-success fw-semibold">A calcular (Whats)</span>
-                    </div>
-
-                    <hr class="my-3 border-secondary">
-
-                    <!-- Cupom de Desconto -->
-                    <div class="mb-4">
-                        <label class="form-label small text-muted text-uppercase fw-bold">Cupom de Desconto</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-dark text-white border-secondary" placeholder="Ex: COPÃO10">
-                            <button class="btn btn-warning fw-bold" type="button">Aplicar</button>
-                        </div>
-                    </div>
-
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <span class="fs-5 fw-bold">Total estimado:</span>
-                        <span class="fs-4 fw-bold text-warning">R$ 58,00</span>
-                    </div>
-
-                    <a href="https://wa.me/5542998178060?text=Olá!%20Gostaria%20de%20finalizar%20meu%20pedido%20do%20site!" target="_blank" class="text-decoration-none">
-                        <button class="btn btn-success w-100 py-2.5 fw-bold rounded-pill shadow-sm mb-2">
-                            Finalizar pelo WhatsApp 📲
-                        </button>
-                    </a>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <!-- Quantidade -->
+                <div style="display: flex; align-items: center; gap: 5px;">
+                    <button type="button" onclick="alterarQtd(this, -1)" style="background: #202025; color: #fff; border: 1px solid rgba(168, 85, 247, 0.4); width: 28px; height: 28px; border-radius: 6px; cursor: pointer;">-</button>
+                    <input type="text" value="2" class="input-qtd" readonly style="width: 35px; text-align: center; background: #121214; border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 6px; padding: 4px;">
+                    <button type="button" onclick="alterarQtd(this, 1)" style="background: #202025; color: #fff; border: 1px solid rgba(168, 85, 247, 0.4); width: 28px; height: 28px; border-radius: 6px; cursor: pointer;">+</button>
                 </div>
-
-                <!-- Aviso de Segurança/Entrega -->
-                <div class="card border-0 p-3 shadow-sm rounded-3" style="background-color: #1a1a1a; border: 1px solid #333 !important;">
-                    <div class="d-flex align-items-center text-muted">
-                        <span class="fs-4 me-3">🛡️</span>
-                        <p class="mb-0 small text-white-50">Entrega rápida e segura. Aceitamos Pix, Cartões de Crédito/Débito e Dinheiro na entrega.</p>
-                    </div>
+                <!-- Preço -->
+                <div style="font-size: 16px; font-weight: bold; color: var(--roxo-neon, #a855f7); min-width: 80px; text-align: right;">
+                    R$ <span class="preco-total-item">40,00</span>
                 </div>
+                <!-- Remover -->
+                <button type="button" onclick="removerItem(this)" style="background: rgba(239, 68, 68, 0.15); color: #ef4444; border: none; padding: 6px 10px; border-radius: 6px; cursor: pointer;">🗑️</button>
             </div>
         </div>
-    </div>
-</div>
 
-<?php
-include 'inc/footer.inc.php';
-?>
+        <!-- Item 2 -->
+        <div class="item-carrinho" data-preco="18.00" style="background: var(--fundo-card, #18181b); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 12px; padding: 15px; display: flex; align-items: center; justify-content: space-between; gap: 15px;">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <img src="img/copaogin.png" alt="Copão Gin" style="width: 65px; height: 65px; object-fit: cover; border-radius: 8px;">
+                <div>
+                    <h4 style="color: #fff; font-size: 15px; margin-bottom: 4px;">Copão Gin Tropical</h4>
+                    <p style="color: var(--texto-secundario); font-size: 12px;">700ml // Frutas Secas</p>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <!-- Quantidade -->
+                <div style="display: flex; align-items: center; gap: 5px;">
+                    <button type="button" onclick="alterarQtd(this, -1)" style="background: #202025; color: #fff; border: 1px solid rgba(168, 85, 247, 0.4); width: 28px; height: 28px; border-radius: 6px; cursor: pointer;">-</button>
+                    <input type="text" value="1" class="input-qtd" readonly style="width: 35px; text-align: center; background: #121214; border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 6px; padding: 4px;">
+                    <button type="button" onclick="alterarQtd(this, 1)" style="background: type="button" onclick="alterarQtd(this, 1)" style="background: #202025; color: #fff; border: 1px solid rgba(168, 85, 247, 0.4); width: 28px; height: 28px; border-radius: 6px; cursor: pointer;">+</button>
+                </div>
+                <!-- Preço -->
+                <div style="font-size: 16px; font-weight: bold; color: var(--roxo-neon, #a855f7); min-width: 80px; text-align: right;">
+                    R$ <span class="preco-total-item">18,00</span>
+                </div>
+                <!-- Remover -->
+                <button type="button" onclick="removerItem(this)" style="background: rgba(239, 68, 68, 0.15); color: #ef4444; border: none; padding: 6px 10px; border-radius: 6px; cursor: pointer;">🗑️</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Resumo do Pedido -->
+    <div style="background: var(--fundo-card, #18181b); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 12px; padding: 20px;">
+        <h3 style="color: #fff; font-size: 16px; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">Resumo da Compra</h3>
+        
+        <div style="display: flex; justify-content: space-between; margin-bottom: 10px; color: var(--texto-secundario); font-size: 14px;">
+            <span id="contadorItens">Subtotal (2 itens)</span>
+            <span>R$ <span id="valorSubtotal">58,00</span></span>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-bottom: 15px; color: var(--texto-secundario); font-size: 14px;">
+            <span>Taxa de Entrega</span>
+            <span style="color: var(--roxo-neon); font-weight: 600;">A calcular</span>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px; font-size: 16px; font-weight: bold; color: #fff; margin-bottom: 20px;">
+            <span>Total Estimado</span>
+            <span style="color: var(--roxo-neon);">R$ <span id="valorTotal">58,00</span></span>
+        </div>
+
+        <!-- Botão Avançar para Pagamento -->
+        <a href="pagamento.php" style="display: block; width: 100%; background: var(--roxo-neon, #a855f7); color: #fff; text-align: center; padding: 12px; border-radius: 8px; font-weight: bold; text-decoration: none; box-shadow: 0 0 12px rgba(168,85,247,0.3); transition: background 0.3s;">
+            💳 Ir para Forma de Pagamento
+        </a>
+    </div>
+</main>
+
+<script>
+function alterarQtd(botao, mudanca) {
+    const item = botao.closest('.item-carrinho');
+    const input = item.querySelector('.input-qtd');
+    let qtd = parseInt(input.value) + mudanca;
+    if (qtd < 1) qtd = 1;
+    input.value = qtd;
+    recalcular();
+}
+
+function removerItem(botao) {
+    botao.closest('.item-carrinho').remove();
+    recalcular();
+}
+
+function limparCarrinho() {
+    document.getElementById('listaCarrinho').innerHTML = '<p style="color: var(--texto-secundario); text-align: center; padding: 20px;">Carrinho vazio.</p>';
+    recalcular();
+}
+
+function recalcular() {
+    let itens = document.querySelectorAll('.item-carrinho');
+    let subtotal = 0;
+    let qtdTotal = 0;
+
+    itens.forEach(item => {
+        let precoUnit = parseFloat(item.getAttribute('data-preco'));
+        let qtd = parseInt(item.querySelector('.input-qtd').value);
+        let totalItem = precoUnit * qtd;
+        
+        item.querySelector('.preco-total-item').textContent = totalItem.toFixed(2).replace('.', ',');
+        subtotal += totalItem;
+        qtdTotal += qtd;
+    });
+
+    document.getElementById('contadorItens').textContent = `Subtotal (${qtdTotal} ${qtdTotal === 1 ? 'item' : 'itens'})`;
+    document.getElementById('valorSubtotal').textContent = subtotal.toFixed(2).replace('.', ',');
+    document.getElementById('valorTotal').textContent = subtotal.toFixed(2).replace('.', ',');
+}
+</script>
+
+<?php include 'inc/footer.inc.php'; ?>
